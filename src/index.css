@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/*
+  Sistema de design da Lumé.
+  Aqui definimos a paleta suave (creme, rosa queimado, lilás, sálvia, dourado)
+  como tokens do Tailwind v4. Assim podemos usar classes como `bg-cream`,
+  `text-ink`, `bg-rose`, etc. em toda a app.
+*/
+@theme {
+  --color-cream: #faf6f1;
+  --color-card: #ffffff;
+  --color-ink: #3a322c;
+  --color-muted: #8c8178;
+  --color-line: #ece4db;
+
+  --color-rose: #b56576;
+  --color-rose-soft: #f3e2e4;
+  --color-lilac: #9b8bc4;
+  --color-lilac-soft: #eae9f6;
+  --color-sage: #88a079;
+  --color-sage-soft: #e3ecdc;
+  --color-gold: #c2982f;
+  --color-gold-soft: #f4ecd2;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+
+  --radius-xl2: 1.5rem;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-cream text-ink antialiased;
+    font-feature-settings: "ss01";
+  }
+
+  /* Tipos de letra elegantes via Google Fonts (carregados abaixo). */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Scrollbar discreta, no espírito premium/minimalista. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 999px;
+  border: 3px solid var(--color-cream);
+}
