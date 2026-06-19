@@ -7,8 +7,9 @@
      (serve rápido da cache e atualiza em segundo plano).
   Os dados da app continuam no localStorage, por isso funcionam offline.
 */
-const CACHE = "lume-v1";
-const APP_SHELL = ["/", "/index.html", "/manifest.webmanifest"];
+const CACHE = "lume-v2";
+// Caminhos relativos ao scope do service worker (funciona em "/" ou "/Lumetest2/").
+const APP_SHELL = ["./", "./index.html", "./manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -41,10 +42,10 @@ self.addEventListener("fetch", (event) => {
       fetch(request)
         .then((res) => {
           const copy = res.clone();
-          caches.open(CACHE).then((c) => c.put("/index.html", copy));
+          caches.open(CACHE).then((c) => c.put("./index.html", copy));
           return res;
         })
-        .catch(() => caches.match("/index.html")),
+        .catch(() => caches.match("./index.html")),
     );
     return;
   }
