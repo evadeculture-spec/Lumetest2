@@ -13,9 +13,11 @@ O teu painel pessoal para organizares a tua vida num só sítio: **tarefas**,
 - **Finanças** — registar receitas e despesas, ver lista e resumo mensal (saldo).
 - **Treinos** — registar treinos, ver histórico e resumo semanal.
 
+- **PWA** — instalável no iPad/telemóvel/computador e funciona offline.
+
 ## Stack
 
-React · Vite · TypeScript · Tailwind CSS v4 · lucide-react · localStorage
+React · Vite · TypeScript · Tailwind CSS v4 · lucide-react · localStorage · PWA
 
 ## Como correr
 
@@ -38,6 +40,10 @@ Para gerar a versão final (build de produção):
 npm run build
 npm run preview
 ```
+
+> Nota: o modo PWA (service worker / offline) só fica ativo na **build de
+> produção** (`npm run build` + `npm run preview`), não no `npm run dev`.
+> Para instalar no iPad: abre no Safari → Partilhar → “Adicionar ao ecrã principal”.
 
 ## Estrutura de pastas
 

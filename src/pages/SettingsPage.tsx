@@ -1,4 +1,4 @@
-import { Database, Trash2, Sparkles } from "lucide-react";
+import { Database, Trash2, Sparkles, Download } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
@@ -21,6 +21,28 @@ export function SettingsPage() {
       <PageHeader title="Definições" subtitle="Sobre a app e os teus dados" />
 
       <div className="space-y-6">
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Download size={18} className="text-sage" /> Instalar no dispositivo
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2 pt-2 text-sm text-muted">
+            <p>
+              A Lumé é uma app instalável (PWA). Depois de instalada, abre em
+              ecrã inteiro e funciona offline.
+            </p>
+            <p>
+              <strong className="text-ink">No iPad/iPhone (Safari):</strong>{" "}
+              toca em Partilhar → “Adicionar ao ecrã principal”.
+            </p>
+            <p>
+              <strong className="text-ink">No computador (Chrome/Edge):</strong>{" "}
+              usa o ícone de instalar na barra de endereço.
+            </p>
+          </CardContent>
+        </Card>
+
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
